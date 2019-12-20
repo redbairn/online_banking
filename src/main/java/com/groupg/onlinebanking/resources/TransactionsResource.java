@@ -25,21 +25,22 @@ public class TransactionsResource {
     @GET
     @Path("/transactions")
     public List<Transactions> getTransactions() {
-        System.out.println("Getting transactions");
+        System.out.println("Getting transactions...");
         List<Transactions> transactionList = transactionService.getAllTransactions();
+         System.out.println("In the TransactionsResource on Line 30");
         return transactionList;
     }
     
     @GET
-    @Path("/transaction/{animalId}")
-    public Transactions getTransaction(@PathParam("animalId") int id) {
+    @Path("/transaction/{transactionId}")
+    public Transactions getTransaction(@PathParam("transactionId") int id) {
         System.out.println("Getting transaction with ID="+id);
         return transactionService.getTransaction(id);
     }
     
     @PUT
-    @Path("/transaction/{animalId}")
-    public Transactions setTransaction(@PathParam("animalId") int id, Transactions m) {
+    @Path("/transaction/{transactionId}")
+    public Transactions setTransaction(@PathParam("transactionId") int id, Transactions m) {
         System.out.println("Updating transaction with ID="+id);
         return transactionService.updateTransaction(id,m);
     }
@@ -53,8 +54,8 @@ public class TransactionsResource {
     }
     
     @DELETE 
-    @Path("/transaction/{animalId}")
-    public Transactions deleteTransaction(@PathParam("animalId") int id) {
+    @Path("/transaction/{transactionId}")
+    public Transactions deleteTransaction(@PathParam("transactionId") int id) {
         System.out.println("Deleting transaction "+id);
 	Transactions transaction = transactionService.deleteTransaction(id);
         return transaction;

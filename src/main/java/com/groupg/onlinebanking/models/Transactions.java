@@ -1,5 +1,6 @@
 package com.groupg.onlinebanking.models;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -12,8 +13,8 @@ public class Transactions {
     private Date dateAdded;
     private String description;
     private int accountNo;
-    private String species;
-    private String breed;
+    private BigDecimal creditAmount;
+    private BigDecimal debitAmount;
     private String colour;
     private List<Note> notes;
     private String functions;
@@ -21,13 +22,13 @@ public class Transactions {
     public Transactions() {
     }
 
-    public Transactions(int id, String description, int accountNo, String species, String breed, String colour) {
+    public Transactions(int id, String description, int accountNo, BigDecimal debitAmount, BigDecimal creditAmount, String colour) {
         this.id = id;
         this.dateAdded = new Date();
         this.description = description;
         this.accountNo = accountNo;
-        this.species = species;
-        this.breed = breed;
+        this.debitAmount = debitAmount;
+        this.creditAmount = creditAmount;
         this.colour = colour;
         this.notes = new ArrayList<>();
     }
@@ -54,8 +55,7 @@ public class Transactions {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-    
+    }    
     public long getAccountNo() {
         return accountNo;
     }
@@ -64,22 +64,22 @@ public class Transactions {
         this.accountNo = accountNo;
     }
     
-    public String getSpecies() {
-        return species;
+    public BigDecimal getDebitAmount() {
+        return debitAmount;
     }
 
-    public void setSpecies(String species) {
-        this.species = species;
-    }    
+    public void setDebitAmount(BigDecimal debitAmount) {
+        this.debitAmount = debitAmount;
+    }
     
-    public String getBreed() {
-        return breed;
+    public BigDecimal getCreditAmount() {
+        return creditAmount;
     }
 
-    public void setBreed(String breed) {
-        this.breed = breed;
+    public void setCreditAmount(BigDecimal creditAmount) {
+        this.creditAmount = creditAmount;
     }
-    
+   
     public String getColour() {
         return colour;
     }

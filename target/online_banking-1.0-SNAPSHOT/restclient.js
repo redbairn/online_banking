@@ -14,8 +14,8 @@ $(document).ready(function(){
         },
         { "data": "description" },
         { "data": "accountNo" },
-        { "data": "species"},
-        { "data": "breed" },
+        { "data": "debitAmount"},
+        { "data": "creditAmount" },
         { "data": "colour"}
     ],
     "aoColumnDefs": [
@@ -143,7 +143,7 @@ $(document).ready(function(){
           $('#table_transactions').dataTable().api().ajax.reload(function(){
             hide_loading_message();
             var accountNo = $('#accountNo').val();
-            show_message("Lodgement processed successfully for " + accountNo + ".", 'success');
+            show_message("Lodgement processed successfully for account no - " + accountNo + ".", 'success');
           }, true);
       });
  
@@ -153,7 +153,4 @@ $(document).ready(function(){
       });
     }
   });
-  
-
-
 });

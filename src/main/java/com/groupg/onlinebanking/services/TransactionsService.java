@@ -20,6 +20,7 @@ public class TransactionsService {
     
     // getAllAnimals
     public List<Transactions> getAllTransactions() {
+        System.out.println("In the TransactionsService on Line 23");
         return transactionList;
     }
     
