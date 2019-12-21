@@ -13,23 +13,23 @@ public class Transactions {
     private Date dateAdded;
     private String description;
     private int accountNo;
-    private BigDecimal creditAmount;
-    private BigDecimal debitAmount;
-    private String colour;
+    private Double creditAmount;
+    private Double debitAmount;
+    private Double balance;
     private List<Note> notes;
     private String functions;
     
     public Transactions() {
     }
 
-    public Transactions(int id, String description, int accountNo, BigDecimal debitAmount, BigDecimal creditAmount, String colour) {
+    public Transactions(int id, String description, int accountNo, Double debitAmount, Double creditAmount, Double balance) {
         this.id = id;
         this.dateAdded = new Date();
         this.description = description;
         this.accountNo = accountNo;
         this.debitAmount = debitAmount;
         this.creditAmount = creditAmount;
-        this.colour = colour;
+        this.balance = balance;
         this.notes = new ArrayList<>();
     }
 
@@ -64,28 +64,28 @@ public class Transactions {
         this.accountNo = accountNo;
     }
     
-    public BigDecimal getDebitAmount() {
+    public Double getDebitAmount() {
         return debitAmount;
     }
 
-    public void setDebitAmount(BigDecimal debitAmount) {
+    public void setDebitAmount(Double debitAmount) {
         this.debitAmount = debitAmount;
     }
     
-    public BigDecimal getCreditAmount() {
+    public Double getCreditAmount() {
         return creditAmount;
     }
 
-    public void setCreditAmount(BigDecimal creditAmount) {
+    public void setCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
     }
    
-    public String getColour() {
-        return colour;
+    public Double getBalance() {
+        return balance;
     }
 
-    public void setColour(String colour) {
-        this.colour = colour;
+    public void setBalance(Double balance) {
+        this.balance = balance;
     }
     
     public List<Note> getNotes() {

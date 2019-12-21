@@ -16,7 +16,7 @@ $(document).ready(function(){
         { "data": "accountNo" },
         { "data": "debitAmount"},
         { "data": "creditAmount" },
-        { "data": "colour"}
+        { "data": "balance"}
     ],
     "aoColumnDefs": [
       { "bSortable": false, "aTargets": [-1] }
