@@ -117,8 +117,8 @@ $(document).ready(function(){
     $('#form_transaction').attr('data-id', '');
     $('#form_transaction .field_container label.error').hide();
     $('#form_transaction .field_container').removeClass('valid').removeClass('error');
-    $('#form_transaction #amount').val('');
     $('#form_transaction #accountNo').val('');
+    $('#form_transaction #creditAmount').val('');
     show_lightbox();
   });
 
@@ -143,7 +143,8 @@ $(document).ready(function(){
           $('#table_transactions').dataTable().api().ajax.reload(function(){
             hide_loading_message();
             var accountNo = $('#accountNo').val();
-            show_message("Lodgement processed successfully for account no - " + accountNo + ".", 'success');
+            var creditAmount = $('#creditAmount').val();
+            show_message("Lodgement for "+ creditAmount + " processed successfully for account no - " + accountNo + ".", 'success');
           }, true);
       });
  

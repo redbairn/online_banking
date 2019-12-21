@@ -44,7 +44,6 @@ public class TransactionsResource {
         return transactionService.updateTransaction(id,m);
     }
 
-    // int id, Double balance, Double debit, Transactions m
     @POST
     @Path("/transaction")
     public Transactions postTransaction(Transactions m) {

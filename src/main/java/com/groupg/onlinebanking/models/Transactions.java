@@ -13,8 +13,8 @@ public class Transactions {
     private Date dateAdded;
     private String description;
     private int accountNo;
-    private Double creditAmount;
     private Double debitAmount;
+    private Double creditAmount;
     private Double balance;
     private List<Note> notes;
     private String functions;
@@ -82,6 +82,7 @@ public class Transactions {
    
     public Double getBalance() {
         Double debit = getDebitAmount();
+        Double credit = getCreditAmount();
         // Debit the balance which we will return
         // balance = balance - debit;
         return balance;
@@ -103,17 +104,5 @@ public class Transactions {
         Note note = new Note (noteText);  
         this.notes.add(note);
         return note;
-    }
-    
-//    public String getFunctions() {
-//        functions = "<div class='function_buttons'><ul>";
-//        functions += "<li class='function_edit'><a data-id='"+id+" 'data-name='"+accountNo+"'><span>Edit</span></a></li>";
-//        functions += "<li class='function_delete'><a data-id='"+id+" 'data-name='"+accountNo+"'><span>Delete</span></a></li>";
-//        functions += "</ul></div>";
-//        return functions;
-//    }
-    
-    private void setFunctions(String functions) {
-        // dummy setter 
     }
 }

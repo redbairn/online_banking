@@ -117,8 +117,8 @@ $(document).ready(function(){
     $('#form_transaction').attr('data-id', '');
     $('#form_transaction .field_container label.error').hide();
     $('#form_transaction .field_container').removeClass('valid').removeClass('error');
-    $('#form_transaction #creditAmount').val('');
     $('#form_transaction #accountNo').val('');
+    $('#form_transaction #creditAmount').val('');
     show_lightbox();
   });
 
