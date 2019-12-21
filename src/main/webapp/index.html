@@ -20,8 +20,11 @@
 
       <h1>My Transactions</h1>
 
+      <button type="button" class="button" id="create_account">Create Account</button>
       <button type="button" class="button" id="make_lodgement">Make Lodgement</button>
-      
+      <button type="button" class="button" id="make_withdrawal">Make Withdrawal</button>
+      <button type="button" class="button" id="make_transfer">Make Transfer</button>
+
       <table class="datatable" id="table_transactions">
         <thead>
           <tr>
@@ -44,13 +47,13 @@
     <div class="lightbox_container">
       <div class="lightbox_close"></div>
       <div class="lightbox_content">
-        
+
         <h2>Make Lodgement</h2>
         <form class="form add" id="form_transaction" data-id="" novalidate>
           <div class="input_container">
             <label for="creditAmount">Amount: <span class="required">*</span></label>
             <div class="field_container">
-              <input type="number" class="text" name="creditAmount" id="creditAmount" value="" required>
+              <input type="number" class="text" name="creditAmount" id="debitAmount" value="" required>
             </div>
           </div>
           <div class="input_container">
