@@ -119,6 +119,7 @@ $(document).ready(function(){
     $('#form_transaction .field_container').removeClass('valid').removeClass('error');
     $('#form_transaction #accountNo').val('');
     $('#form_transaction #creditAmount').val('');
+    $('#form_transaction #balance').val('');
     show_lightbox();
   });
 

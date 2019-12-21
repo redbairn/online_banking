@@ -5,7 +5,6 @@
  */
 package com.groupg.onlinebanking.services;
 
-import com.groupg.onlinebanking.models.Note;
 import com.groupg.onlinebanking.models.Transactions;
 import com.groupg.onlinebanking.databases.Database;
 import java.util.ArrayList;
@@ -27,21 +26,45 @@ public class TransactionsService {
         return transactionList.get(id-1);
     }
     
-    // Get the balance
-//    public Transactions getBalance(Double balance) {
-//        Double debit;
-//        debit = transactionList.getDebitAmount();
-//        return transactionList.get(balance-debit);
-//    }
+    Transactions findTransactionByid(int id){    
+    for (Transactions transaction : transactionList) {
+        if (transaction.getId() == id) {
+            return transaction;
+        }
+    }
+        return null; 
+    }
     
     // Create a Transaction
     public Transactions createTransaction(Transactions m) {
 	m.setId(transactionList.size() + 1);
-        // Update the balance
-        //--Date dateAdded = animalList.get(id-1).getDateAdded();
-         //Transactions transaction = transactionList.get(id-1);
-        // Double balance = transactionList.get(id-1).getBalance();
-        //System.out.println("The balance is: "+balance);
+        // Get the current created transaction account no
+        int account = m.getAccountNo(); 
+        // Print out the value of the current account no     
+        System.out.println("Get AccountNo is: "+account);
+        
+        System.out.println(transactionList);
+
+        long id = m.getId();
+        //System.out.println(findTransactionByid((int) id));
+
+        
+        
+        
+        
+        
+        
+// Update the balance
+
+        if (transactionList.contains(account)) {
+            System.out.println("Account found");
+            m.setBalance(m.getBalance());
+        } else {
+            System.out.println("Account not found");
+        }
+
+        
+
 //        debit = transactionList.get(id+1).getDebitAmount();
 //        if(debit != null){
 //          m.setBalance(balance + debit);

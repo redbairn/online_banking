@@ -16,8 +16,6 @@ public class Transactions {
     private Double debitAmount;
     private Double creditAmount;
     private Double balance;
-    private List<Note> notes;
-    private String functions;
     
     public Transactions() {
     }
@@ -30,13 +28,12 @@ public class Transactions {
         this.debitAmount = debitAmount;
         this.creditAmount = creditAmount;
         this.balance = balance;
-        this.notes = new ArrayList<>();
     }
-
+    
     public long getId() {
         return id;
     }
-
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -81,28 +78,10 @@ public class Transactions {
     }
    
     public Double getBalance() {
-        Double debit = getDebitAmount();
-        Double credit = getCreditAmount();
-        // Debit the balance which we will return
-        // balance = balance - debit;
         return balance;
     }
 
     public void setBalance(Double balance) {
         this.balance = balance;
-    }
-    
-    public List<Note> getNotes() {
-	return notes;
-    }
-
-    public void setNotes(List<Note> note) {
-	this.notes = notes;
-    }
-    
-    public Note addNote(String noteText) {
-        Note note = new Note (noteText);  
-        this.notes.add(note);
-        return note;
     }
 }
