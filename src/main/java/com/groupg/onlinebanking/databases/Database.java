@@ -21,7 +21,7 @@ public class Database {
         Transactions a1 = new Transactions(1,"Jack", 12345, null, null,"Tan and white");
         a1.addNote("Note for animal 1");
         transactionsDB.add(a1);
-        Transactions a2 = new Transactions(2,"Cindy", 54321, null, null,"Black and white");   
+        Transactions a2 = new Transactions(2,"Cindy", 33003, null, null,"Black and white");   
         a2.addNote("Feed every 3 hours");
         a2.addNote("Vets visit on Friday");
         transactionsDB.add(a2);
@@ -36,8 +36,6 @@ public class Database {
         Transactions a6 = new Transactions(6,"Micha", 44556, null, null,"Grey");
         transactionsDB.add(a6);
         init = false;
-      }else{
-          System.out.println("Hmmm! Database not initialising!!");
       }
     }
     

@@ -56,7 +56,7 @@ public class Transactions {
     public void setDescription(String description) {
         this.description = description;
     }    
-    public long getAccountNo() {
+    public int getAccountNo() {
         return accountNo;
     }
 

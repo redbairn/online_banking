@@ -27,7 +27,6 @@ public class TransactionsResource {
     public List<Transactions> getTransactions() {
         System.out.println("Getting transactions...");
         List<Transactions> transactionList = transactionService.getAllTransactions();
-         System.out.println("In the TransactionsResource on Line 30");
         return transactionList;
     }
     

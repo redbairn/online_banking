@@ -5,7 +5,6 @@
  */
 package com.groupg.onlinebanking.services;
 
-import com.groupg.onlinebanking.models.Transactions;
 import com.groupg.onlinebanking.models.Note;
 import com.groupg.onlinebanking.models.Transactions;
 import com.groupg.onlinebanking.databases.Database;
@@ -20,7 +19,6 @@ public class TransactionsService {
     
     // getAllAnimals
     public List<Transactions> getAllTransactions() {
-        System.out.println("In the TransactionsService on Line 23");
         return transactionList;
     }
     
