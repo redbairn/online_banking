@@ -18,7 +18,7 @@ public class Database {
     public Database () {
       if (init) {
         Transactions a1 = new Transactions(1,"Jack", 12345, 5.00, null,55.00);
-        a1.addNote("Note for animal 1");
+        a1.addNote("Note for transaction 1");
         transactionsDB.add(a1);
         Transactions a2 = new Transactions(2,"Cindy", 33003, null, 50.00,1250.00);   
         a2.addNote("Feed every 3 hours");

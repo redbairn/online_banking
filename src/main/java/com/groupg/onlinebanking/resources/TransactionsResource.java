@@ -44,9 +44,10 @@ public class TransactionsResource {
         return transactionService.updateTransaction(id,m);
     }
 
+    // int id, Double balance, Double debit, Transactions m
     @POST
     @Path("/transaction")
-    public Transactions postAnimal(Transactions m) {
+    public Transactions postTransaction(Transactions m) {
         m.setDateAdded(new Date());
         System.out.println("Creating new transaction");
 	return transactionService.createTransaction(m);

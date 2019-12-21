@@ -17,24 +17,48 @@ public class TransactionsService {
     Database d = new Database();
     private List<Transactions> transactionList = d.getTransactionsDB();
     
-    // getAllAnimals
+    // Get All Transactions
     public List<Transactions> getAllTransactions() {
         return transactionList;
     }
     
-    // getAnimal
+    // Get Transaction
     public Transactions getTransaction(int id) {
         return transactionList.get(id-1);
     }
     
-    // createAnimal
+    // Get the balance
+//    public Transactions getBalance(Double balance) {
+//        Double debit;
+//        debit = transactionList.getDebitAmount();
+//        return transactionList.get(balance-debit);
+//    }
+    
+    // Create a Transaction
     public Transactions createTransaction(Transactions m) {
 	m.setId(transactionList.size() + 1);
+        // Update the balance
+        //--Date dateAdded = animalList.get(id-1).getDateAdded();
+         //Transactions transaction = transactionList.get(id-1);
+        // Double balance = transactionList.get(id-1).getBalance();
+        //System.out.println("The balance is: "+balance);
+//        debit = transactionList.get(id+1).getDebitAmount();
+//        if(debit != null){
+//          m.setBalance(balance + debit);
+//        }   
+//        if(balance>=debitAmount)
+//        { 
+//                balance=balance-debitAmount;
+//        }
+//        else
+//        {
+//                System.out.println("Less Balance..Transaction Failed..");
+//        }
 	transactionList.add(m);
 	return m;
     }
     
-    //updateAnimal
+    // Update a Transaction
     public Transactions updateTransaction(int id, Transactions m) {
        Date dateAdded = transactionList.get(id-1).getDateAdded();
        m.setDateAdded(dateAdded);
@@ -42,7 +66,7 @@ public class TransactionsService {
        return m;
     }
    
-    // deleteAnimal
+    // Delete a Transaction
     public Transactions deleteTransaction(int id) {
        Transactions transaction = transactionList.get(id-1);
        transactionList.remove(transaction);

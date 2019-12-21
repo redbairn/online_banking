@@ -81,6 +81,9 @@ public class Transactions {
     }
    
     public Double getBalance() {
+        Double debit = getDebitAmount();
+        // Debit the balance which we will return
+        // balance = balance - debit;
         return balance;
     }
 
