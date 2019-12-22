@@ -163,11 +163,18 @@ public class Transactions {
 //        
 //        // Test to print out accountNo's
 //        for(Transactions transactions : transactionList) {
-//            if(transactions.getAccountNo() == accountNo){
-//                balance = transactions.getBalance();
-//                return transaction;
-//            }
+//            transactions.indexOf(account);
+//            E e = transactionList.get(transactionList.size() - 1);
+////            if(transactions.getAccountNo() == accountNo){
+////                balance = transactions.getBalance();
+////                return transaction;
+////            }
 //        }
-//        return false;
+//        //return false;
+//        
+//    }
+//
+//    private void indexOf(int account) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
 }

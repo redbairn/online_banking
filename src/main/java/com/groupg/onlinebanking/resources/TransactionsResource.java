@@ -65,7 +65,7 @@ public class TransactionsResource {
     
     // POST the withdrawal and update the balance
     @POST
-    @Path("/transaction/withdraw/")
+    @Path("/transaction/withdraw")
     public Transactions postWithdrawal(Transactions m) {
         m.setDateAdded(new Date());
         System.out.println("Creating new transaction for withdrawal..");
