@@ -113,10 +113,6 @@ public class Transactions {
     }
    
     public Double getBalance() {
-//        if(balance > 0){
-//            creditAmount = getCreditAmount();
-//            balance = balance + creditAmount;
-//        }
         return balance;
     }
 
@@ -160,4 +156,18 @@ public class Transactions {
         balance = balance + creditAmount;
         setBalance(balance);
     } 
+
+//    public void latestBalance(int account) {
+//        Database d = new Database();
+//        List<Transactions> transactionList = d.getTransactionsDB();
+//        
+//        // Test to print out accountNo's
+//        for(Transactions transactions : transactionList) {
+//            if(transactions.getAccountNo() == accountNo){
+//                balance = transactions.getBalance();
+//                return transaction;
+//            }
+//        }
+//        return false;
+//    }
 }
