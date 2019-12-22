@@ -21,6 +21,8 @@ public class Transactions {
             if(transactions.getAccountNo() == accountNo){
                 balance = transactions.getBalance();
                 System.out.println("The balance of the accountNo in the database is: "+balance);
+                double newBalance = balance + creditAmount;
+                 System.out.println("The new balance of the accountNo ("+accountNo+") in the database is: "+newBalance);
                 return true;
             }else{
                 return false;
