@@ -37,15 +37,14 @@ public class TransactionsService {
     // Lodgement Transaction (Credit)
       public Transactions lodgementTransaction(Transactions m) {
         // Need to check if the account number already exists in the transactions table, if it does we need to add the lodgement (credit) value to the original balance
-        //-Transactions transaction = transactionList.get(id-1);
-        //-System.out.println("TEST: "+transaction);
-
+        // First we need to set the accountNo that we are currently using in the lodgement form:
         int account = m.getAccountNo();
-        System.out.println("This accountNo: "+account);
-        boolean contains = m.contains(account);
-        
+        System.out.println("This accountNo: "+account); // For testing to see the currently set accountNo
+        boolean contains = m.contains(account); // Getting whether the account exists already from the contains method under Transactions.java
+        // Below we display in console whether the account exists or not
         if(contains==true){
              System.out.println("This account exists.");
+             
         }else{
             System.out.println("This account doesn't exist!");
         }
