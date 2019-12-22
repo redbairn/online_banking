@@ -160,6 +160,10 @@ $(document).ready(function () {
         $('#form_transaction').attr('class', 'form add');
         $('#form_transaction').attr('data-id', '');
         $('#form_transaction .field_container label.error').hide();
+        $('#form_transaction label').attr('for', 'creditAmount');
+        $("label[for='amount']").text("Lodgement Amount");
+        $('#creditAmount').attr('name', 'creditAmount');
+        $('#creditAmount').attr('id', 'creditAmount');
         $('#form_transaction .field_container').removeClass('valid').removeClass('error');
         $('#form_transaction #amount').val('');
         $('#form_transaction #accountNo').val('');
@@ -202,13 +206,17 @@ $(document).ready(function () {
     $(document).on('click', '#make_withdrawal', function (e) {
         e.preventDefault();
         $('.lightbox_content h2').text('Make Withdrawal');
-        $('#form_withdraw button').text('Withdrawal');
-        $('#form_withdraw').attr('class', 'form add');
-        $('#form_withdraw').attr('data-id', '');
-        $('#form_withdraw .field_container label.error').hide();
-        $('#form_withdraw .field_container').removeClass('valid').removeClass('error');
-        $('#form_withdraw #amount').val('');
-        $('#form_withdraw #accountNo').val('');
+        $('#form_transaction button').text('Withdrawal');
+        $('#form_transaction').attr('class', 'form add');
+        $('#form_transaction').attr('data-id', '');
+        $('#form_transaction label').attr('for', 'debitAmount');
+        $("label[for='amount']").text("Withdrawal Amount");
+        $('#creditAmount').attr('name', 'debitAmount');
+        $('#creditAmount').attr('id', 'debitAmount');
+        $('#form_transaction .field_container label.error').hide();
+        $('#form_transaction .field_container').removeClass('valid').removeClass('error');
+        $('#form_transaction #amount').val('');
+        $('#form_transaction #accountNo').val('');
         show_lightbox();
     });
 
