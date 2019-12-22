@@ -11,11 +11,14 @@ public class Transactions {
     
     private int id;
     private Date dateAdded;
+//    private String name;
     private String description;
     private int accountNo;
-    private Double debitAmount;
     private Double creditAmount;
+    private Double debitAmount;
     private Double balance;
+    private List<Note> notes;
+    private String functions;
     
     public Transactions() {
     }
@@ -23,17 +26,19 @@ public class Transactions {
     public Transactions(int id, String description, int accountNo, Double debitAmount, Double creditAmount, Double balance) {
         this.id = id;
         this.dateAdded = new Date();
-        this.description = description;
+//        this.name = name; need to add this to the database struture
+        this.description = description; // shoudl be using this field to referance the transaction once the name field is added to the db, coudl link this to the note service either 
         this.accountNo = accountNo;
         this.debitAmount = debitAmount;
         this.creditAmount = creditAmount;
         this.balance = balance;
+        this.notes = new ArrayList<>();
     }
-    
+
     public long getId() {
         return id;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }
@@ -45,6 +50,14 @@ public class Transactions {
     public void setDateAdded(Date dateadded) {
         this.dateAdded = dateadded;
     }
+// the below needs to be uncommented to be added to the database structure    
+//    public String getName() {
+//        return name;
+//    }
+//    
+//    public void setName() {
+//        this.name = name;
+//    }
 
     public String getDescription() {
         return description;
@@ -83,5 +96,31 @@ public class Transactions {
 
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+    
+    public List<Note> getNotes() {
+	return notes;
+    }
+
+    public void setNotes(List<Note> note) {
+	this.notes = notes;
+    }
+    
+    public Note addNote(String noteText) {
+        Note note = new Note (noteText);  
+        this.notes.add(note);
+        return note;
+    }
+    
+//    public String getFunctions() {
+//        functions = "<div class='function_buttons'><ul>";
+//        functions += "<li class='function_edit'><a data-id='"+id+" 'data-name='"+accountNo+"'><span>Edit</span></a></li>";
+//        functions += "<li class='function_delete'><a data-id='"+id+" 'data-name='"+accountNo+"'><span>Delete</span></a></li>";
+//        functions += "</ul></div>";
+//        return functions;
+//    }
+    
+    private void setFunctions(String functions) {
+        // dummy setter 
     }
 }

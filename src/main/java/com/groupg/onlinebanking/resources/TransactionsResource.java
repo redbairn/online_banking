@@ -46,12 +46,13 @@ public class TransactionsResource {
 
     @POST
     @Path("/transaction")
-    public Transactions postTransaction(Transactions m) {
+    public Transactions postAnimal(Transactions m) {
         m.setDateAdded(new Date());
         System.out.println("Creating new transaction");
 	return transactionService.createTransaction(m);
     }
     
+   
     @DELETE 
     @Path("/transaction/{transactionId}")
     public Transactions deleteTransaction(@PathParam("transactionId") int id) {
