@@ -43,13 +43,18 @@ public class TransactionsService {
         boolean contains = m.contains(account); // Getting whether the account exists already from the contains method under Transactions.java
         // Below we display in console whether the account exists or not
         if(contains==true){
-            System.out.println("This account exists in the database.");
+            System.out.println("This account ("+account+") exists in the database.");
             Double balance = m.getBalance(); // This is only for this balance -- Need to check for the balance of the same account in the database
-            Double creditAmount = m.getCreditAmount();
-            Double newBalance = balance + creditAmount; // set the new balance
+            System.out.println("The current balance of account ("+account+") is: "+balance);
+            Double creditAmount = m.getCreditAmount(); // This is getting the current credit amount
+            System.out.println("The current lodgement amount is: "+creditAmount);
+            
+            // We need to get the previous balance and not the first one in the database
+            
+            
+            Double newBalance = balance + creditAmount; // set the new balance using the current
+            System.out.println("The current balance + the lodgement amount equals: "+newBalance);
             m.setBalance(newBalance);
-            System.out.println("The current balance is: "+balance);
-
         }else{
             System.out.println("This account doesn't exist in the database!");
             
