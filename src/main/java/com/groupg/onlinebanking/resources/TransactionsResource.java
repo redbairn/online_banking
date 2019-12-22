@@ -46,11 +46,21 @@ public class TransactionsResource {
 
     @POST
     @Path("/transaction")
-    public Transactions postAnimal(Transactions m) {
+    public Transactions postTransaction(Transactions m) {
         m.setDateAdded(new Date());
+        //m.setBalance(balance);
         System.out.println("Creating new transaction");
 	return transactionService.createTransaction(m);
     }
+    
+    // POST the withdrawal and update the balance
+//    @POST
+//    @Path("/transaction/withdraw/{transactionId}")
+//    public Transactions postWithdraw(int id, Transactions m) {
+//        m.setDateAdded(new Date());
+//        System.out.println("Creating new transaction for withdrawal..");
+//	return transactionService.withdrawalTransaction(id, m);
+//    }
     
    
     @DELETE 

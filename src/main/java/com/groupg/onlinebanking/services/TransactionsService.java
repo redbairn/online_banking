@@ -34,6 +34,15 @@ public class TransactionsService {
 	return m;
     }
     
+    // Withdraw Transaction (Debit)
+      public Transactions withdrawalTransaction(int id, Transactions m) {
+	m.setId(transactionList.size() + 1);
+        Double debitAmount = transactionList.get(id-1).getDebitAmount();
+	m.withdraw(debitAmount);
+        transactionList.add(m);
+        return m;
+    }
+    
     //updateAnimal
     public Transactions updateTransaction(int id, Transactions m) {
        Date dateAdded = transactionList.get(id-1).getDateAdded();

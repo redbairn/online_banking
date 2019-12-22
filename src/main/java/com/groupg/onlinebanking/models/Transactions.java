@@ -27,7 +27,7 @@ public class Transactions {
         this.id = id;
         this.dateAdded = new Date();
 //        this.name = name; need to add this to the database struture
-        this.description = description; // shoudl be using this field to referance the transaction once the name field is added to the db, coudl link this to the note service either 
+        this.description = description; // should be using this field to reference the transaction once the name field is added to the db, could link this to the note service either 
         this.accountNo = accountNo;
         this.debitAmount = debitAmount;
         this.creditAmount = creditAmount;
@@ -123,4 +123,19 @@ public class Transactions {
     private void setFunctions(String functions) {
         // dummy setter 
     }
+    
+    
+    public void withdraw(double debitAmount) {
+        balance = balance - debitAmount;
+        setBalance(balance);
+    }
+
+    public void lodgement(double creditAmount) {
+        balance = balance + creditAmount;
+        setBalance(balance);
+    }
+    
+    
+    
+    
 }
