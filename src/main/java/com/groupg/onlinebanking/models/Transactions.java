@@ -10,16 +10,14 @@ import java.util.ArrayList;
 
 
 public class Transactions {
-
-
-
-    public boolean contains(int account) {
+    
+     public boolean contains(int account) {
         Database d = new Database();
         List<Transactions> transactionList = d.getTransactionsDB();
 
         // Test to print out accountNo's
         for(Transactions transactions : transactionList) {
-            System.out.println(transactions.getAccountNo());  
+            System.out.println(transactions.getBalance());  
             if(transactions.getAccountNo() == accountNo){
                 return true;
             }else{
@@ -115,6 +113,10 @@ public class Transactions {
     }
    
     public Double getBalance() {
+//        if(balance > 0){
+//            creditAmount = getCreditAmount();
+//            balance = balance + creditAmount;
+//        }
         return balance;
     }
 
@@ -157,9 +159,5 @@ public class Transactions {
     public void lodgement(double creditAmount) {
         balance = balance + creditAmount;
         setBalance(balance);
-    }
-    
-    
-    
-    
+    } 
 }

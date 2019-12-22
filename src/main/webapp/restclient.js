@@ -130,7 +130,7 @@ $(document).ready(function () {
             show_loading_message();
             var form_data = $('#form_transaction').serializeJSON();
             var request = $.ajax({
-                url: 'api/transaction/',
+                url: 'api/account/',
                 cache: false,
                 processData: false,
                 data: form_data,
