@@ -45,7 +45,16 @@ public class TransactionsService {
         if (contains == true) {
             System.out.println("This account (" + account + ") exists in the database.");
             Double balance = m.getBalance(); // This is only for this balance -- Need to check for the balance of the same account in the database
+
             System.out.println("The current balance of account (" + account + ") is: " + balance);
+
+            //E e = list.get(list.size() - 1);
+            //Double balance = transactionList.get(m.getBalance().size() - 1);
+            //m.lastIndexOf(Object o);
+            //m.lastIndexOf(account);
+            
+            System.out.println("The current balance of account ("+account+") is: "+balance);
+
             Double creditAmount = m.getCreditAmount(); // This is getting the current credit amount
             System.out.println("The current lodgement amount is: " + creditAmount);
 
