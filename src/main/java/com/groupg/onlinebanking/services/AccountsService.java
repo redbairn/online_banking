@@ -5,10 +5,13 @@
  */
 package com.groupg.onlinebanking.services;
 
-/**
- *
- * @author david
- */
+import com.groupg.onlinebanking.models.Note;
+import com.groupg.onlinebanking.models.Transactions;
+import com.groupg.onlinebanking.databases.Database;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+
 public class AccountsService {
     
 }
