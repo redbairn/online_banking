@@ -202,26 +202,26 @@ $(document).ready(function () {
     $(document).on('click', '#make_withdrawal', function (e) {
         e.preventDefault();
         $('.lightbox_content h2').text('Make Withdrawal');
-        $('#form_transaction button').text('Withdrawal');
-        $('#form_transaction').attr('class', 'form add');
-        $('#form_transaction').attr('data-id', '');
-        $('#fform_transaction .field_container label.error').hide();
-        $('#form_transaction .field_container').removeClass('valid').removeClass('error');
-        $('#form_transaction #amount').val('');
-        $('#form_transaction #accountNo').val('');
+        $('#form_withdraw button').text('Withdrawal');
+        $('#form_withdraw').attr('class', 'form add');
+        $('#form_withdraw').attr('data-id', '');
+        $('#form_withdraw .field_container label.error').hide();
+        $('#form_withdraw .field_container').removeClass('valid').removeClass('error');
+        $('#form_withdraw #amount').val('');
+        $('#form_withdraw #accountNo').val('');
         show_lightbox();
     });
 
-    $(document).on('submit', '#form_withdrawal.add', function (e) {
+    $(document).on('submit', '#form_withdraw.add', function (e) {
         e.preventDefault();
         // Validate form
         if (form_transaction.valid() == true) {
             hide_ipad_keyboard();
             hide_lightbox();
             show_loading_message();
-            var form_data = $('#form_withdrawal').serializeJSON();
+            var form_data = $('#form_withdraw').serializeJSON();
             var request = $.ajax({
-                url: 'api/transaction/',
+                url: 'api/transaction/withdrawal',
                 cache: false,
                 processData: false,
                 data: form_data,

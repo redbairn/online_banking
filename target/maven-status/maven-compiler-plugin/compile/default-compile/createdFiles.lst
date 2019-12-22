@@ -1,5 +1,4 @@
 com\groupg\onlinebanking\models\Note.class
 com\groupg\onlinebanking\services\TransactionsService.class
 com\groupg\onlinebanking\models\Transactions.class
-com\groupg\onlinebanking\resources\TransactionsResource.class
 com\groupg\onlinebanking\databases\Database.class
