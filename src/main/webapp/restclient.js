@@ -221,7 +221,7 @@ $(document).ready(function () {
             show_loading_message();
             var form_data = $('#form_withdraw').serializeJSON();
             var request = $.ajax({
-                url: 'api/transaction/withdrawal',
+                url: 'api/transaction/withdraw',
                 cache: false,
                 processData: false,
                 data: form_data,
