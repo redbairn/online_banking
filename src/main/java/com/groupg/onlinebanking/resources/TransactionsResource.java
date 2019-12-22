@@ -53,6 +53,19 @@ public class TransactionsResource {
 	return transactionService.createTransaction(m);
     }
     
+    @POST
+    @Path("/transaction/lodgement")
+    public Transactions postLodgement(Transactions m) {
+        m.setDateAdded(new Date());
+        //m.setBalance(balance);
+        System.out.println("Creating new transaction");
+	return transactionService.lodgementTransaction(m);
+    }
+    
+    
+    
+    
+    
     // POST the withdrawal and update the balance
 //    @POST
 //    @Path("/transaction/withdraw/{transactionId}")

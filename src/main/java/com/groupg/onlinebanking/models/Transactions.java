@@ -1,5 +1,7 @@
 package com.groupg.onlinebanking.models;
 
+import com.groupg.onlinebanking.databases.Database;
+import static com.groupg.onlinebanking.databases.Database.transactionsDB;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -8,6 +10,28 @@ import java.util.ArrayList;
 
 
 public class Transactions {
+
+
+
+    public boolean contains(int account) {
+        Database d = new Database();
+        List<Transactions> transactionList = d.getTransactionsDB();
+
+        // Test to print out accountNo's
+        for(Transactions transactions : transactionList) {
+            System.out.println(transactions.getAccountNo());  
+            if(transactions.getAccountNo() == accountNo){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        //return null; 
+
+        //return transactionsDB.contains(account); 
+        return false;
+
+    }
     
     private int id;
     private Date dateAdded;

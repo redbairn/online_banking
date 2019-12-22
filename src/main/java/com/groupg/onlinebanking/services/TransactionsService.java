@@ -34,6 +34,38 @@ public class TransactionsService {
 	return m;
     }
     
+    // Lodgement Transaction (Credit)
+      public Transactions lodgementTransaction(Transactions m) {
+        // Need to check if the account number already exists in the transactions table, if it does we need to add the lodgement (credit) value to the original balance
+        //-Transactions transaction = transactionList.get(id-1);
+        //-System.out.println("TEST: "+transaction);
+
+        int account = m.getAccountNo();
+        System.out.println("This accountNo: "+account);
+        boolean contains = m.contains(account);
+        
+        if(contains==true){
+             System.out.println("This account exists.");
+        }else{
+            System.out.println("This account doesn't exist!");
+        }
+        //System.out.println("This account exists: "+contains);
+        
+        // -- m.setBalance();
+        // -- m.lodgement(debitAmount);
+        // ---Double creditAmount = transactionList.get(id-1).getCreditAmount();
+        // ---m.lodgement(debitAmount);
+        // 
+        
+        
+
+        // Set the transaction, incremented
+	m.setId(transactionList.size() + 1);
+        // Add the transaction details to the arraylist, transactionList
+        transactionList.add(m);
+        return m;
+    }
+    
     // Withdraw Transaction (Debit)
       public Transactions withdrawalTransaction(int id, Transactions m) {
 	m.setId(transactionList.size() + 1);
