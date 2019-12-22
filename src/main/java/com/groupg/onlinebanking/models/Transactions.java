@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 
 public class Transactions {
-    
+    // Method to check whether the account exists in the transactionsDB
      public boolean contains(int account) {
         Database d = new Database();
         List<Transactions> transactionList = d.getTransactionsDB();
@@ -24,11 +24,7 @@ public class Transactions {
                 return false;
             }
         }
-        //return null; 
-
-        //return transactionsDB.contains(account); 
         return false;
-
     }
     
     private int id;

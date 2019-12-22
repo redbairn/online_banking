@@ -44,8 +44,10 @@ public class TransactionsService {
         // Below we display in console whether the account exists or not
         if(contains==true){
              System.out.println("This account exists in the database.");
-//             Double balance = m.getBalance();
-//             System.out.println("The new balance is: "+balance);
+            Double balance = m.getBalance(); // This is only for this balance -- Need to check for the balance of the same account in the database
+            //Double newBalance;
+            m.setBalance(balance);
+            System.out.println("The current balance is: "+balance);
         }else{
             System.out.println("This account doesn't exist in the database!");
         }
