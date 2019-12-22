@@ -107,51 +107,51 @@ $(document).ready(function () {
         document.activeElement.blur();
         $('input').blur();
     }
-        // Create Account - button
-    $(document).on('click', '#create_account', function (e) {
-        e.preventDefault();
-        $('.lightbox_content h2').text('Create Account');
-        $('#form_transaction button').text('Create Account');
-        $('#form_transaction').attr('class', 'form add');
-        $('#form_transaction').attr('data-id', '');
-        $('#form_transaction .field_container label.error').hide();
-        $('#form_transaction .field_container').removeClass('valid').removeClass('error');
-        $('#form_transaction #amount').val('');
-        $('#form_transaction #accountNo').val('');
-        show_lightbox();
-    });
-
-    $(document).on('submit', '#form_transaction.add', function (e) {
-        e.preventDefault();
-        // Validate form
-        if (form_transaction.valid() == true) {
-            hide_ipad_keyboard();
-            hide_lightbox();
-            show_loading_message();
-            var form_data = $('#form_transaction').serializeJSON();
-            var request = $.ajax({
-                url: 'api/transaction/',
-                cache: false,
-                processData: false,
-                data: form_data,
-                dataType: 'json',
-                contentType: 'application/json',
-                type: 'post'
-            });
-            request.done(function (output) {
-                $('#table_transactions').dataTable().api().ajax.reload(function () {
-                    hide_loading_message();
-                    var accountNo = $('#accountNo').val();
-                    show_message("Account Successfully created - " + accountNo + ".", 'success');
-                }, true);
-            });
-
-            request.fail(function (jqXHR, textStatus) {
-                hide_loading_message();
-                show_message('Add request failed: ' + textStatus, 'error');
-            });
-        }
-    });
+//        // Create Account - button
+//    $(document).on('click', '#create_account', function (e) {
+//        e.preventDefault();
+//        $('.lightbox_content h2').text('Create Account');
+//        $('#form_transaction button').text('Create Account');
+//        $('#form_transaction').attr('class', 'form add');
+//        $('#form_transaction').attr('data-id', '');
+//        $('#form_transaction .field_container label.error').hide();
+//        $('#form_transaction .field_container').removeClass('valid').removeClass('error');
+//        $('#form_transaction #amount').val('');
+//        $('#form_transaction #accountNo').val('');
+//        show_lightbox();
+//    });
+//
+//    $(document).on('submit', '#form_transaction.add', function (e) {
+//        e.preventDefault();
+//        // Validate form
+//        if (form_transaction.valid() == true) {
+//            hide_ipad_keyboard();
+//            hide_lightbox();
+//            show_loading_message();
+//            var form_data = $('#form_transaction').serializeJSON();
+//            var request = $.ajax({
+//                url: 'api/transaction/',
+//                cache: false,
+//                processData: false,
+//                data: form_data,
+//                dataType: 'json',
+//                contentType: 'application/json',
+//                type: 'post'
+//            });
+//            request.done(function (output) {
+//                $('#table_transactions').dataTable().api().ajax.reload(function () {
+//                    hide_loading_message();
+//                    var accountNo = $('#accountNo').val();
+//                    show_message("Account Successfully created - " + accountNo + ".", 'success');
+//                }, true);
+//            });
+//
+//            request.fail(function (jqXHR, textStatus) {
+//                hide_loading_message();
+//                show_message('Add request failed: ' + textStatus, 'error');
+//            });
+//        }
+//    });
     // Make Lodgement - button
     $(document).on('click', '#make_lodgement', function (e) {
         e.preventDefault();
@@ -202,24 +202,24 @@ $(document).ready(function () {
     $(document).on('click', '#make_withdrawal', function (e) {
         e.preventDefault();
         $('.lightbox_content h2').text('Make Withdrawal');
-        $('#form_transaction button').text('Withdrawal ');
+        $('#form_transaction button').text('Withdrawal');
         $('#form_transaction').attr('class', 'form add');
         $('#form_transaction').attr('data-id', '');
-        $('#form_transaction .field_container label.error').hide();
+        $('#fform_transaction .field_container label.error').hide();
         $('#form_transaction .field_container').removeClass('valid').removeClass('error');
         $('#form_transaction #amount').val('');
         $('#form_transaction #accountNo').val('');
         show_lightbox();
     });
 
-    $(document).on('submit', '#form_transaction.add', function (e) {
+    $(document).on('submit', '#form_withdrawal.add', function (e) {
         e.preventDefault();
         // Validate form
         if (form_transaction.valid() == true) {
             hide_ipad_keyboard();
             hide_lightbox();
             show_loading_message();
-            var form_data = $('#form_transaction').serializeJSON();
+            var form_data = $('#form_withdrawal').serializeJSON();
             var request = $.ajax({
                 url: 'api/transaction/',
                 cache: false,
@@ -243,49 +243,49 @@ $(document).ready(function () {
             });
         }
     });
-        // Make Transfer - button
-    $(document).on('click', '#make_transfer', function (e) {
-        e.preventDefault();
-        $('.lightbox_content h2').text('Make Transfer');
-        $('#form_transaction button').text('Transfer ');
-        $('#form_transaction').attr('class', 'form add');
-        $('#form_transaction').attr('data-id', '');
-        $('#form_transaction .field_container label.error').hide();
-        $('#form_transaction .field_container').removeClass('valid').removeClass('error');
-        $('#form_transaction #amount').val('');
-        $('#form_transaction #accountNo').val('');
-        show_lightbox();
-    });
-
-    $(document).on('submit', '#form_transaction.add', function (e) {
-        e.preventDefault();
-        // Validate form
-        if (form_transaction.valid() == true) {
-            hide_ipad_keyboard();
-            hide_lightbox();
-            show_loading_message();
-            var form_data = $('#form_transaction').serializeJSON();
-            var request = $.ajax({
-                url: 'api/transaction/',
-                cache: false,
-                processData: false,
-                data: form_data,
-                dataType: 'json',
-                contentType: 'application/json',
-                type: 'post'
-            });
-            request.done(function (output) {
-                $('#table_transactions').dataTable().api().ajax.reload(function () {
-                    hide_loading_message();
-                    var accountNo = $('#accountNo').val();
-                    show_message("Transfer processed successfully for account no - " + accountNo + ".", 'success');
-                }, true);
-            });
-
-            request.fail(function (jqXHR, textStatus) {
-                hide_loading_message();
-                show_message('Add request failed: ' + textStatus, 'error');
-            });
-        }
-    });
+//        // Make Transfer - button
+//    $(document).on('click', '#make_transfer', function (e) {
+//        e.preventDefault();
+//        $('.lightbox_content h2').text('Make Transfer');
+//        $('#form_transaction button').text('Transfer ');
+//        $('#form_transaction').attr('class', 'form add');
+//        $('#form_transaction').attr('data-id', '');
+//        $('#form_transaction .field_container label.error').hide();
+//        $('#form_transaction .field_container').removeClass('valid').removeClass('error');
+//        $('#form_transaction #amount').val('');
+//        $('#form_transaction #accountNo').val('');
+//        show_lightbox();
+//    });
+//
+//    $(document).on('submit', '#form_transaction.add', function (e) {
+//        e.preventDefault();
+//        // Validate form
+//        if (form_transaction.valid() == true) {
+//            hide_ipad_keyboard();
+//            hide_lightbox();
+//            show_loading_message();
+//            var form_data = $('#form_transaction').serializeJSON();
+//            var request = $.ajax({
+//                url: 'api/transaction/',
+//                cache: false,
+//                processData: false,
+//                data: form_data,
+//                dataType: 'json',
+//                contentType: 'application/json',
+//                type: 'post'
+//            });
+//            request.done(function (output) {
+//                $('#table_transactions').dataTable().api().ajax.reload(function () {
+//                    hide_loading_message();
+//                    var accountNo = $('#accountNo').val();
+//                    show_message("Transfer processed successfully for account no - " + accountNo + ".", 'success');
+//                }, true);
+//            });
+//
+//            request.fail(function (jqXHR, textStatus) {
+//                hide_loading_message();
+//                show_message('Add request failed: ' + textStatus, 'error');
+//            });
+//        }
+//    });
 });
