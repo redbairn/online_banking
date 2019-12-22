@@ -211,8 +211,6 @@ $(document).ready(function () {
         $('#form_transaction').attr('data-id', '');
         $('#form_transaction label').attr('for', 'debitAmount');
         $("label[for='amount']").text("Withdrawal Amount");
-        $('#creditAmount').attr('name', 'debitAmount');
-        $('#creditAmount').attr('id', 'debitAmount');
         $('#form_transaction .field_container label.error').hide();
         $('#form_transaction .field_container').removeClass('valid').removeClass('error');
         $('#form_transaction #amount').val('');
@@ -220,14 +218,14 @@ $(document).ready(function () {
         show_lightbox();
     });
 
-    $(document).on('submit', '#form_withdraw.add', function (e) {
+    $(document).on('submit', '#form_transaction.add', function (e) {
         e.preventDefault();
         // Validate form
         if (form_transaction.valid() == true) {
             hide_ipad_keyboard();
             hide_lightbox();
             show_loading_message();
-            var form_data = $('#form_withdraw').serializeJSON();
+            var form_data = $('#form_transaction').serializeJSON();
             var request = $.ajax({
                 url: 'api/transaction/withdraw',
                 cache: false,
