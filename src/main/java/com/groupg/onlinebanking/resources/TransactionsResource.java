@@ -57,7 +57,6 @@ public class TransactionsResource {
     @Path("/transaction/lodgement")
     public Transactions postLodgement(Transactions m) {
         m.setDateAdded(new Date());
-        //m.setBalance(balance);
         System.out.println("Creating new transaction");
 	return transactionService.lodgementTransaction(m);
     }
