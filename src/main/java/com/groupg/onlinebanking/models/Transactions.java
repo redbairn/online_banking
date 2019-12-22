@@ -19,6 +19,8 @@ public class Transactions {
         for(Transactions transactions : transactionList) {
             System.out.println(transactions.getBalance());  
             if(transactions.getAccountNo() == accountNo){
+                balance = transactions.getBalance();
+                System.out.println("The balance of the accountNo in the database is: "+balance);
                 return true;
             }else{
                 return false;

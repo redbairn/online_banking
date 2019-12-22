@@ -43,13 +43,15 @@ public class TransactionsService {
         boolean contains = m.contains(account); // Getting whether the account exists already from the contains method under Transactions.java
         // Below we display in console whether the account exists or not
         if(contains==true){
-             System.out.println("This account exists in the database.");
+            System.out.println("This account exists in the database.");
             Double balance = m.getBalance(); // This is only for this balance -- Need to check for the balance of the same account in the database
             //Double newBalance;
             m.setBalance(balance);
             System.out.println("The current balance is: "+balance);
+
         }else{
             System.out.println("This account doesn't exist in the database!");
+            
         }
         //System.out.println("This account exists: "+contains);
         
@@ -59,12 +61,11 @@ public class TransactionsService {
         // ---m.lodgement(debitAmount);
         // 
         
-        
-
         // Set the transaction, incremented
-	m.setId(transactionList.size() + 1);
+        m.setId(transactionList.size() + 1);
         // Add the transaction details to the arraylist, transactionList
         transactionList.add(m);
+        
         return m;
     }
     
